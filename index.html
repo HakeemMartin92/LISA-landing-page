@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO: what search engines and browser tabs show ===== -->
+  <title>LISA – Music Player That Learns Your Taste | Android App</title>
+  <meta name="description" content="LISA is an Android music player that learns from your listening habits to give you personalized recommendations, smart playlists, listening stats and offline playback.">
+  <meta name="theme-color" content="#15202b">
+
+  <!-- ===== Open Graph: the preview card when the link is shared (WhatsApp, Facebook, etc.) ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LISA – Music Player That Learns Your Taste">
+  <meta property="og:description" content="Personalized recommendations, smart playlists and offline playback for Android.">
+  <!-- Replace  HakeemMartin92 and LISA-Landing-Page later (Stage 11) -->
+  <meta property="og:url" content="https:// HakeemMartin92.github.io/LISA-Landing-Page/">
+  <meta property="og:image" content="https:// HakeemMartin92.github.io/LISA-Landing-Page/images/logo.png">
+
+  <!-- Favicon = the small icon on the browser tab -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a href="#top" class="logo" aria-label="LISA home">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </span>
+        <span class="logo-text">LISA</span>
+      </a>
+
+      <!-- Menu button: only visible on phones -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li hidden><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+
+        <!-- DOWNLOAD LINK 1 of 3 (navigation bar) -->
+        <a class="btn btn-primary btn-small" href="https://github.com/ HakeemMartin92/LISA-Landing-Page/releases/latest/download/LISA.apk">Download</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-text">
+          <p class="eyebrow">Android Music Player</p>
+          <h1>Music that <span class="gradient-text">learns you.</span></h1>
+          <p class="hero-desc">LISA studies how you listen and builds a personal soundtrack around your taste. Smarter playlists, better discoveries, and all your music in one place.</p>
+
+          <div class="hero-buttons">
+            <!-- DOWNLOAD LINK 2 of 3 (hero) -->
+            <a class="btn btn-primary btn-large" href="https://github.com/ HakeemMartin92/LISA-Landing-Page/releases/latest/download/LISA.apk">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download LISA
+            </a>
+            <a class="btn btn-secondary btn-large" href="#features">Explore Features</a>
+          </div>
+
+          <p class="hero-note">Free for Android &bull; APK download</p>
+        </div>
+
+        <!-- Phone drawn with HTML + CSS (no image needed) -->
+        <div class="hero-visual">
+          <div class="glow" aria-hidden="true"></div>
+
+          <div class="phone" role="img" aria-label="Illustration of the LISA app playing a song on a phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <p class="ps-label">Now Playing</p>
+              <div class="ps-art">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              </div>
+              <p class="ps-title">Midnight Drive</p>
+              <p class="ps-artist">Made for you</p>
+              <div class="ps-progress"><span></span></div>
+              <div class="ps-controls">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+                <span class="ps-play"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating decorations -->
+          <div class="float-card float-one" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <span>New mix ready</span>
+          </div>
+          <div class="float-card float-two" aria-hidden="true">
+            <div class="eq"><span></span><span></span><span></span><span></span></div>
+            <span>Top artist this week</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FEATURES SECTION ==================== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Features</p>
+          <h2>Everything your music needs</h2>
+          <p>Powerful tools that stay out of your way.</p>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <h3>Personalized Recommendations</h3>
+            <p>LISA suggests songs based on what you actually play, skip and replay.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+            <h3>Smart Generated Playlists</h3>
+            <p>Fresh playlists are created for you automatically, matched to your mood and habits.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <h3>Listening Statistics</h3>
+            <p>See your top songs, artists and listening time in clear, simple charts.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+            <h3>Music Discovery</h3>
+            <p>Find new tracks and artists you are likely to love, without endless searching.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+            <h3>Offline Playback</h3>
+            <p>Play your music anywhere, with no internet connection needed.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+            <h3>Smart Music Library</h3>
+            <p>Browse and organize all your songs by artist, album and more, quickly and cleanly.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREENSHOTS SECTION ==================== -->
+    <section class="section section-alt" id="screenshots">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Screenshots</p>
+          <h2>See LISA in action</h2>
+          <p>A clean, dark design that feels great on your phone.</p>
+        </div>
+
+        <div class="gallery">
+          <!-- To change a screenshot: replace the file inside the "images" folder, keeping the same name -->
+          <figure><img src="images/screenshot1.png" alt="LISA home screen with personalized recommendations" width="270" height="585" loading="lazy"></figure>
+          <figure><img src="images/screenshot2.png" alt="LISA now playing screen" width="270" height="585" loading="lazy"></figure>
+          <figure><img src="images/screenshot3.png" alt="LISA listening statistics screen" width="270" height="585" loading="lazy"></figure>
+          <figure><img src="images/screenshot4.png" alt="LISA music library screen" width="270" height="585" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS SECTION ==================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>Gets to know you, one song at a time</h2>
+          <p>LISA turns your listening habits into a listening experience made just for you.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <h3>Add &amp; listen</h3>
+            <p>Add your music and press play, just like any other player.</p>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <h3>LISA analyzes</h3>
+            <p>It quietly notices what you play, repeat and skip.</p>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <h3>LISA learns</h3>
+            <p>Your favorite styles and artists become clear over time.</p>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <h3>You enjoy more</h3>
+            <p>Playlists and suggestions get better and more personal every day.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==================== CALL-TO-ACTION SECTION ==================== -->
+    <section class="section" id="download">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to hear the difference?</h2>
+          <p>Download LISA today and let your music learn you.</p>
+
+          <!-- DOWNLOAD LINK 3 of 3 (call-to-action) -->
+          <a class="btn btn-light btn-large" href="https://github.com/ HakeemMartin92/LISA-Landing-Page/releases/latest/download/LISA.apk">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download LISA
+          </a>
+          <p class="cta-note">Android &bull; Free &bull; APK file</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div>
+        <a href="#top" class="logo" aria-label="LISA home">
+          <span class="logo-mark">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </span>
+          <span class="logo-text">LISA</span>
+        </a>
+        <p class="footer-desc">A music player for Android that learns from how you listen.</p>
+        <p class="footer-small">Version 1.0.0</p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li hidden><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <!-- Replace these placeholders with your real links -->
+          <li><a href="mailto:youremail@example.com">youremail@example.com</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 LISA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

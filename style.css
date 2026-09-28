@@ -1,0 +1,522 @@
+/* =====================================================
+   LISA LANDING PAGE – style.css
+   Sections:
+   1. Colors & basic settings
+   2. Buttons
+   3. Navigation bar
+   4. Hero
+   5. Shared section styles
+   6. Feature cards
+   7. Screenshot gallery
+   8. How it works
+   9. Call to action
+   10. Footer
+   11. Animations
+   12. Tablet & phone layouts
+   ===================================================== */
+
+
+/* ---------- 1. COLORS & BASIC SETTINGS ---------- */
+
+/* Change a color here and it changes everywhere on the page */
+:root {
+  --bg: #0b0b14;
+  --bg-alt: #10101c;
+  --surface: #171726;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f4f4fa;
+  --muted: #b3b3c7;
+  --accent: #c4b5fd;
+  --cyan: #22d3ee;
+  --gradient: linear-gradient(135deg, #7c3aed, #db2777);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* stops the sticky menu covering section titles */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+
+/* All icons are outline drawings */
+svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Visible outline for keyboard users */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* ---------- 2. BUTTONS ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;            /* big enough to tap on a phone */
+  padding: 0 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn svg { width: 20px; height: 20px; }
+.btn:hover { transform: translateY(-3px); }
+
+.btn-primary {
+  background: var(--gradient);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
+}
+.btn-primary:hover { box-shadow: 0 12px 32px rgba(219, 39, 119, 0.45); }
+
+.btn-secondary {
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: var(--text);
+}
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.08); }
+
+.btn-light {
+  background: #fff;
+  color: #1a1033;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-small { min-height: 44px; padding: 0 22px; font-size: 0.95rem; }
+.btn-large { min-height: 58px; padding: 0 36px; font-size: 1.1rem; }
+
+
+/* ---------- 3. NAVIGATION BAR ---------- */
+
+.site-header {
+  position: sticky;            /* stays at the top while scrolling */
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 11, 20, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--gradient);
+  display: grid;
+  place-items: center;
+}
+.logo-mark svg { width: 20px; height: 20px; color: #fff; }
+.logo-text { font-size: 1.4rem; font-weight: 800; letter-spacing: 0.05em; }
+
+.nav-menu { display: flex; align-items: center; gap: 32px; }
+.nav-menu ul { display: flex; gap: 28px; }
+.nav-menu ul a { color: var(--muted); font-weight: 600; transition: color 0.2s; }
+.nav-menu ul a:hover { color: #fff; }
+
+/* The three-line menu button (hidden on big screens) */
+.menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+/* Turns the three lines into an X when open */
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ---------- 4. HERO ---------- */
+
+.hero { padding: 80px 0 90px; overflow: hidden; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background-image: linear-gradient(135deg, #a78bfa, #f472b6, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+.hero-note { margin-top: 18px; font-size: 0.9rem; color: var(--muted); }
+
+/* --- The phone illustration --- */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 340px;
+  height: 340px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.55), rgba(236, 72, 153, 0.2) 50%, transparent 70%);
+  filter: blur(40px);
+}
+
+.phone {
+  position: relative;
+  width: 260px;
+  aspect-ratio: 9 / 18.5;
+  border: 8px solid #26263f;
+  border-radius: 42px;
+  background: linear-gradient(180deg, #1c1638, #0e0e1c);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  animation: float 6s ease-in-out infinite;
+}
+.phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 18px;
+  border-radius: 12px;
+  background: #0b0b14;
+}
+.phone-screen {
+  height: 100%;
+  padding: 44px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.ps-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.ps-art {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 26px;
+  background: var(--gradient);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 16px 30px rgba(124, 58, 237, 0.4);
+}
+.ps-art svg { width: 60px; height: 60px; color: #fff; }
+.ps-title { font-weight: 700; font-size: 1.05rem; }
+.ps-artist { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+.ps-progress { height: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.15); margin-bottom: 22px; }
+.ps-progress span { display: block; width: 40%; height: 100%; border-radius: 4px; background: var(--gradient); }
+.ps-controls { display: flex; align-items: center; justify-content: space-around; margin-top: auto; }
+.ps-controls svg { width: 22px; height: 22px; color: #fff; }
+.ps-play {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+}
+.ps-play svg { color: #1a1033; fill: currentColor; }
+
+/* --- Small floating cards around the phone --- */
+.float-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 16px;
+  background: rgba(23, 23, 38, 0.92);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.float-card svg { width: 20px; height: 20px; color: #f472b6; }
+.float-one { top: 14%; left: -4%; animation: float 5s ease-in-out infinite; }
+.float-two { bottom: 16%; right: -6%; animation: float 7s ease-in-out infinite reverse; }
+
+/* Little animated sound bars */
+.eq { display: flex; align-items: flex-end; gap: 3px; height: 18px; }
+.eq span {
+  width: 4px;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--cyan);
+  animation: bars 1s ease-in-out infinite alternate;
+}
+.eq span:nth-child(2) { animation-delay: 0.2s; }
+.eq span:nth-child(3) { animation-delay: 0.4s; }
+.eq span:nth-child(4) { animation-delay: 0.6s; }
+
+
+/* ---------- 5. SHARED SECTION STYLES ---------- */
+
+.section { padding: 90px 0; }
+.section-alt { background: var(--bg-alt); }
+
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 52px; }
+.section-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.15; margin-bottom: 14px; }
+.section-head p { color: var(--muted); font-size: 1.05rem; }
+.section-head .eyebrow { color: var(--accent); }
+
+
+/* ---------- 6. FEATURE CARDS ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(167, 139, 250, 0.55);
+  box-shadow: 0 16px 40px rgba(124, 58, 237, 0.2);
+}
+.icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(139, 92, 246, 0.16);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+.icon svg { width: 26px; height: 26px; }
+.card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.card p { color: var(--muted); }
+
+
+/* ---------- 7. SCREENSHOT GALLERY ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 28px;
+}
+.gallery figure { max-width: 300px; width: 100%; margin: 0 auto; }
+.gallery img {
+  width: 100%;
+  border-radius: 26px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+.gallery img:hover { transform: translateY(-8px) scale(1.02); }
+
+
+/* ---------- 8. HOW IT WORKS ---------- */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.steps li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  transition: transform 0.25s ease;
+}
+.steps li:hover { transform: translateY(-6px); }
+.step-num {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--gradient);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+.steps h3 { margin-bottom: 8px; }
+.steps p { color: var(--muted); }
+
+
+/* ---------- 9. CALL TO ACTION ---------- */
+
+.cta-box {
+  text-align: center;
+  padding: 72px 24px;
+  border-radius: 32px;
+  background: var(--gradient);
+  box-shadow: 0 30px 60px rgba(124, 58, 237, 0.3);
+}
+.cta-box h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.15; margin-bottom: 12px; }
+.cta-box p { font-size: 1.1rem; margin-bottom: 30px; }
+.cta-box .cta-note { margin: 18px 0 0; font-size: 0.9rem; }
+
+
+/* ---------- 10. FOOTER ---------- */
+
+.site-footer { border-top: 1px solid var(--border); padding-top: 64px; background: var(--bg); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
+.footer-desc { color: var(--muted); margin: 16px 0 8px; max-width: 320px; }
+.footer-small { color: var(--muted); font-size: 0.85rem; }
+.site-footer h3 { font-size: 1rem; margin-bottom: 16px; }
+.site-footer li { margin-bottom: 10px; }
+.site-footer li a { color: var(--muted); transition: color 0.2s; }
+.site-footer li a:hover { color: #fff; }
+.footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  padding-bottom: 28px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+
+/* ---------- 11. ANIMATIONS ---------- */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+@keyframes bars {
+  from { transform: scaleY(0.25); }
+  to   { transform: scaleY(1); }
+}
+
+/* Respect people who turn off animations in their phone settings */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+
+/* ---------- 12. TABLET & PHONE LAYOUTS ---------- */
+
+/* Tablets and smaller */
+@media (max-width: 860px) {
+
+  /* Show the menu button, hide the menu until it's tapped */
+  .menu-toggle { display: flex; }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 24px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .nav-menu.open { display: flex; }
+  .nav-menu ul { flex-direction: column; gap: 4px; }
+  .nav-menu ul a { display: block; padding: 12px; font-size: 1.1rem; }
+
+  /* Hero becomes one column: text on top, phone below */
+  .hero { padding: 56px 0 70px; }
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-desc { margin-left: auto; margin-right: auto; }
+  .hero-buttons { justify-content: center; }
+
+  .section { padding: 70px 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* Small phones */
+@media (max-width: 520px) {
+  .hero-buttons .btn { width: 100%; }
+  .float-one { left: 0; }
+  .float-two { right: 0; }
+  .cta-box { padding: 56px 20px; }
+}
